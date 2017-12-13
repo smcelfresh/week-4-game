@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<title>Crystal Collector</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">  
+</head>
+
+<body>
+<!-- rows function in containers (grid created). -->
+<div class="container">
+
+  <!--Row 1 Header -->
+    <div class="row">
+       <div class="col-md-4">
+        <h2>Crystal Collectors!</h2>
+      	</div>
+    </div>
+    
+  <!--Row 2 instruction content-->
+    <div class="row">
+      <div class="col-md-6">
+        <div id="instructions-container">
+          <p>You will be given a random number at the start of the game.</p>
+          <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+          <p>You win the game by matching your total score to random number, you lose the game if your total score goes above the random number.</p>
+          <p>The value of each crystal is hidden from you until you click on it.</p>
+          <p>Each time when the game starts, the game will change the values of each crystal.</p>
+       	 </div>
+       </div>
+   	</div>
+
+  <!--Row 3 Points, wins, losses-->
+    <div class="row">      
+      <div class="col-md-3">
+         <div id="points-container">
+           <p id="randomNumber">39</p>
+        	</div>
+        </div>
+      <div class="col-md-2">
+        <div id="score-container">   
+          <p>Wins: <span id="win"></span></p>
+          <p>Losses: <span id="loss"></span></p>
+        	</div>
+      </div>
+    </div>
+
+  <!--Row 4 pic of crystals-->
+    <div class="crystals">
+      <div class="row">
+        <div class="col-md-2">
+          <img id="blue" src="assets/images/bluecrystal.png" alt="Blue Crystal">
+          <img id="green" src="assets/images/greencrystal.png" alt="Green Crystal">
+          <img id="yellow" src="assets/images/yellowcrystal.png" alt="Yellow Crystal">
+          <img id="red" src="assets/images/redcrystal.png" alt="Red Crystal">
+      	 </div>
+      </div>
+    </div>
+	<!--Row 5 - Total score --> 
+    <div class="row">
+       <div class="col-md-3">
+        <p>Your total score is:<span id="currentScore"></span></p>
+      	</div>
+    </div>
+  <!-- Row 6 - actual placeholder for running score -->
+    <div class="row">
+      <div class="col-md-3">
+        <h3 id="currentScore">0:<h3>
+       </div>
+       <button id=""buttonReset">Play again</button>
+    </div>
+</div>
+
+<!--jQuery links -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="assets/javascript/game.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: url('../images/light-veneer.png');
+	font-size: 18px;
+	line-height: 34px;
+	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+	color: #777;
+}
+
+.container {
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+	clear: both;
+}
+
+#instructions-container {
+	background: #F0F8FF;
+	font-family: 'Georgia', Times, Times New Roman, serif;
+	/*text-align: center;*/
+	color: #008000;
+	font-weight: 600;
+	font-size: 15px;
+}
+
+img {
+	width: 70px;
+	height: 70px;
+	float: left;
+}
+
+/*Points container*/
+
+#points-container {
+	background: #3cb371;
+	font-size: 30px;
+	padding: 30px;
+	margin-top: 10px; 
+}
+
+#score-container {
+	background: #00ffff;
+	padding: 30px;
+	margin-top: 10px;
+}
+
+
+.crystals {
+	border-bottom: 2px solid #eee;
+	padding-bottom: 20px;
+	margin-bottom: 15px;
+	line-height: 22px;
+	float: left;
+}
+
