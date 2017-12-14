@@ -50,8 +50,8 @@ function scoreKeeper(){
 			$("#loss").html(lossCounter);
 			playAgain();
 		}
-		if (currentScore == matchNum) {
-			wins++;
+		if (currentScore === matchNum) {
+			winCounter++;
 			$("#win").html(winCounter);
 			playAgain();
 		}
@@ -63,10 +63,11 @@ function scoreKeeper(){
    		greenCounter = Math.floor((Math.random() * 11) + 1);
    		yellowCounter = Math.floor((Math.random() * 11) + 1);
    		redCounter = Math.floor((Math.random() * 11) + 1);
-			matchNum = 0;
-			currentScore = 0;
-			
-			getNumber();
+		
+		matchNum = 0;
+		currentScore = 0;
+		document.getElementById("currentScore").innerHTML = currentScore;
+		getNumber();
 
 		};
 		});
