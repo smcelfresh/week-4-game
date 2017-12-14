@@ -1,10 +1,10 @@
  $(document).ready(function() {
- 	//Create a counter for each crystal when clicked
-   //create counters to hold Wins, Losses and user's current and matched score
-   	var blueCounter = 0;   
-   	var greenCounter = 0;
-   	var yellowCounter = 0;
-   	var redCounter = 0;
+ 	//Create a counter for each crystal
+   //create counters to hold Wins, Losses, user's current and matched score
+   	var blueCounter = Math.floor((Math.random() * 11) + 1);  
+   	var greenCounter = Math.floor((Math.random() * 11) + 1);
+   	var yellowCounter = Math.floor((Math.random() * 11) + 1);
+   	var redCounter = Math.floor((Math.random() * 11) + 1);
 
 	var winCounter = 0;
 	var lossCounter = 0;
@@ -12,50 +12,34 @@
 	var matchScore = 0;
 
  	// To start game, generate a new random number between 19 and 120
- 	function matchScore() {
-		matchScore= Math.floor((Math.random() * 120) + 19);
+ 	function getScore() {
+		matchScore = Math.floor((Math.random() * 120 - 1) + 19);
+		console.log(matchScore);
 		document.getElementById("randomNumber").innerHTML = matchScore;
 	};
-});
+	getScore();
 
 $("#blue").on('click', function() {
-		if (blueCounter) {
 			currentScore = currentScore + blueCounter;
 		//Replaces the HTML for the element with the currentScore Id that includes the points from clicked crytal.
 			document.getElementById("currentScore").innerHTML = currentScore;
 		//Calling the function that will handle the scorekeeping.
-				scoreKeeper();
-		} else {
-			blueCounter = Math.floor((Math.random() * 11) + 1);
-		}
-	});
+		});
+
 $("#green").on('click', function() {
-		if (greenCounter) {
 			currentScore = currentScore + greenCounter;
 			document.getElementById("currentScore").innerHTML = currentScore;
-			scoreKeeper();
-		} else {
-			greenCounter = Math.floor((Math.random() * 11) + 1);
-		}	
-	});
-$("#yellow").on('click', function(){
-		if (yellowCounter){
+		});
+
+$("#yellow").on('click', function() {
 			currentScore = currentScore + yellowCounter;
+			document.getElementById("currentScore").innerHTML = currentScore;	
+		});
+
+$("#red").on('click', function() {
+			currentScore = currentScore + redCounter;
 			document.getElementById("currentScore").innerHTML = currentScore;
-			scoreKeeper();
-		} else {
-			yellowCounter = Math.floor((Math.random() * 11) + 1);
-		}
-	});
-$("#red").on('click', function(){
-		if (redCounter){
-			currentScore = currentScore + redNCounter;
-			document.getElementById("currentScore").innerHTML = currentScore;
-			scoreKeeper();
-		} else {
-			redCounter = Math.floor((Math.random() * 11) + 1);
-		}
-	});
+		});
 
 function scoreKeeper(){
 		if (currentScore > matchScore) {
@@ -83,3 +67,4 @@ function scoreKeeper(){
 			$("#buttonReset").hide();
 		});
 		};
+		});

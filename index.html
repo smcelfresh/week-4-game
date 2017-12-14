@@ -9,14 +9,14 @@
 </head>
 
 <body>
-<!-- rows function in containers (grid created). -->
+
 <div class="container">
 
   <!--Row 1 Header -->
     <div class="row">
        <div class="col-md-4">
         <h2>Crystal Collectors!</h2>
-      	</div>
+        </div>
     </div>
     
   <!--Row 2 instruction content-->
@@ -48,8 +48,7 @@
     </div>
 
   <!--Row 4 pic of crystals-->
-    <div class="crystals">
-      <div class="row">
+      <div class="row" id="crystals">
         <div class="col-md-2">
           <img id="blue" src="assets/images/bluecrystal.png" alt="Blue Crystal">
           <img id="green" src="assets/images/greencrystal.png" alt="Green Crystal">
@@ -57,20 +56,15 @@
           <img id="red" src="assets/images/redcrystal.png" alt="Red Crystal">
       	 </div>
       </div>
-    </div>
-	<!--Row 5 - Total score --> 
-    <div class="row">
-       <div class="col-md-3">
-        <p>Your total score is:<span id="currentScore"></span></p>
-      	</div>
-    </div>
-  <!-- Row 6 - actual placeholder for running score -->
+   
+  <!-- Row 5 - actual placeholder for running score -->
     <div class="row">
       <div class="col-md-3">
-        <h3 id="currentScore">0:<h3>
-       </div>
-       <button id=""buttonReset">Play again</button>
+        <h3>Your total score is: <span id="currentScore">0</span><h3>
+        <button id=""buttonReset"></button>
+      </div>
     </div>
+
 </div>
 
 <!--jQuery links -->
