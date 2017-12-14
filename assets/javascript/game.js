@@ -9,62 +9,64 @@
 	var winCounter = 0;
 	var lossCounter = 0;
 	var currentScore = 0;
-	var matchScore = 0;
+	var matchNum = 0;
 
  	// To start game, generate a new random number between 19 and 120
- 	function getScore() {
-		matchScore = Math.floor((Math.random() * 120 - 1) + 19);
-		console.log(matchScore);
-		document.getElementById("randomNumber").innerHTML = matchScore;
+ 	function getNumber() {
+		matchNum = Math.floor((Math.random() * 120) + 19);
+		console.log(matchNum);
+		document.getElementById("randomNumber").innerHTML = matchNum;
 	};
-	getScore();
+	getNumber();
 
-$("#blue").on('click', function() {
+	$("#blue").on('click', function() {
 			currentScore = currentScore + blueCounter;
-		//Replaces the HTML for the element with the currentScore Id that includes the points from clicked crytal.
 			document.getElementById("currentScore").innerHTML = currentScore;
-		//Calling the function that will handle the scorekeeping.
+			scoreKeeper();
 		});
 
-$("#green").on('click', function() {
+	$("#green").on('click', function() {
 			currentScore = currentScore + greenCounter;
 			document.getElementById("currentScore").innerHTML = currentScore;
+			scoreKeeper();
 		});
 
-$("#yellow").on('click', function() {
+	$("#yellow").on('click', function() {
 			currentScore = currentScore + yellowCounter;
-			document.getElementById("currentScore").innerHTML = currentScore;	
+			document.getElementById("currentScore").innerHTML = currentScore;
+			scoreKeeper();	
 		});
 
-$("#red").on('click', function() {
+	$("#red").on('click', function() {
 			currentScore = currentScore + redCounter;
 			document.getElementById("currentScore").innerHTML = currentScore;
+			scoreKeeper();
 		});
+	//Create if else statemnets: if current score > matchNum, game over, if matches you win.
 
 function scoreKeeper(){
-		if (currentScore > matchScore) {
+		if (currentScore > matchNum) {
 			lossCounter++;
 			$("#loss").html(lossCounter);
 			playAgain();
 		}
-		if (currentScore == matchScore) {
+		if (currentScore == matchNum) {
 			wins++;
-			$("#wins").html(winCounter);
+			$("#win").html(winCounter);
 			playAgain();
 		}
 	};
 
 //Reset game to set values back to 0.
 	function playAgain() {
-		$("#buttonReset").click(function() {
-			scoreToMeet = 0;
-			scoreNow = 0;
-			blueNum = 0;
-			greenNum = 0;
-			redNum = 0;
-			yellowNum = 0;
-			givenScore();
-			$("#buttonReset").hide();
-		});
+		blueCounter = Math.floor((Math.random() * 11) + 1);  
+   		greenCounter = Math.floor((Math.random() * 11) + 1);
+   		yellowCounter = Math.floor((Math.random() * 11) + 1);
+   		redCounter = Math.floor((Math.random() * 11) + 1);
+			matchNum = 0;
+			currentScore = 0;
+			
+			getNumber();
+
 		};
 		});
